@@ -1,0 +1,8 @@
+Generating mockups for templates in $generator.getTemplatePath() directory.
+
+#foreach ($file in $files.file($generator.getTemplatePath()).list()) 
+ #if ($file.endsWith(".htm") || $file.endsWith(".html"))
+Generating file to $file template.
+   $generator.parse($file, "UTF-8", $file, "UTF-8", null, null)
+ #end
+#end
